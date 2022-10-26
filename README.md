@@ -1,5 +1,8 @@
 # URL Shorteners
 
+[![Build Status](https://img.shields.io/travis/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
+[![GitHub license](https://img.shields.io/github/license/PeterDaveHello/url-shorteners?style=flat-square)](https://github.com/PeterDaveHello/url-shorteners/blob/master/LICENSE)
+
 URL shortener domains collection for whitelist/allowlist or blacklist/blocklist purpose.
 
 You can use this domain list in your network environment to block URL shorteners, or use it as one of the indicators of the domain trustworthy score, at your own risk.
