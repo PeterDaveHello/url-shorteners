@@ -17,4 +17,4 @@ jobs:
       script:
         - for domain in `grep -v -E '^(#|$)' list`; do nslookup $domain > /dev/null || echo "$domain" | tee -a failed-domain; done
         - for domain in `cat failed-domain`; do nslookup $domain; done
-        - if [ "$(wc -l failed-domain | awk '{print $1}')" -gt "0" ]; then echo "Failed domain(s):"; cat failed-domain; exit 1; fi
+        - if [ "$(wc -l < failed-domain)" -gt "0" ]; then echo "Failed domain(s):"; cat failed-domain; exit 1; fi
