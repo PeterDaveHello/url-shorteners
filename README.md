@@ -1,6 +1,6 @@
 # URL Shorteners
 
-[![Build Status](https://img.shields.io/travis/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
+[![Build Status](https://img.shields.io/travis/com/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
 [![GitHub license](https://img.shields.io/github/license/PeterDaveHello/url-shorteners?style=flat-square)](https://github.com/PeterDaveHello/url-shorteners/blob/master/LICENSE)
 
 URL shortener domains collection for whitelist/allowlist or blacklist/blocklist purpose.
