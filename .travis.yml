@@ -13,7 +13,7 @@ jobs:
         - echo 'nameserver 9.9.9.10' | sudo tee /etc/resolv.conf
         - echo 'nameserver 77.88.8.8' | sudo tee -a /etc/resolv.conf
         - echo 'nameserver 168.95.1.1' | sudo tee -a  /etc/resolv.conf
-        - touch failed-domain
+        - touch failed-domain duplicated-domain
       script:
         - for domain in `cat inactive list | grep -Ev '^(#|$)' | sort | uniq -c | grep -Ev '^\s+1' | awk '{print $NF}'`; do echo "$domain" >> duplicated-domain; done
         - for domain in `grep -v -E '^(#|$)' list`; do nslookup $domain > /dev/null || echo "$domain" | tee -a failed-domain; done
