@@ -9,13 +9,15 @@ You can use this domain list in your network environment to block URL shorteners
 
 Data in this repository will not be realtime updated, the effort to maintain the list is huge, feel free to submit report of missing domains or false positives.
 
-Those domains were used as url-shortener but now abandoned should not be listed here.
+Those domains were used as url-shortener but now abandoned will not be listed in the `list` file, but will be listed in the `inactive` file.
 
 ## Direct link
 
-To use this host list, you can subscribe or download the file from the link below:
+To use these host lists, you can subscribe or download the file from the link below:
 
 - https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list
+
+- https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/inactive
 
 ## License
 

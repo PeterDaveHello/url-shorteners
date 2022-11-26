@@ -15,6 +15,9 @@ jobs:
         - echo 'nameserver 168.95.1.1' | sudo tee -a  /etc/resolv.conf
         - touch failed-domain
       script:
+        - for domain in `cat inactive list | grep -Ev '^(#|$)' | sort | uniq -c | grep -Ev '^\s+1' | awk '{print $NF}'`; do echo "$domain" >> duplicated-domain; done
         - for domain in `grep -v -E '^(#|$)' list`; do nslookup $domain > /dev/null || echo "$domain" | tee -a failed-domain; done
         - for domain in `cat failed-domain`; do nslookup $domain; done
-        - if [ "$(wc -l < failed-domain)" -gt "0" ]; then echo "Failed domain(s):"; cat failed-domain; exit 1; fi
+        - if [ "$(wc -l < failed-domain)" -gt "0" ]; then echo "Failed domain(s):"; cat failed-domain; fi
+        - if [ "$(wc -l < duplicated-domain)" -gt "0" ]; then echo "Duplicated domain(s):"; cat duplicated-domain; fi
+        - if [ "$(cat duplicated-domain failed-domain | wc -l)" -gt "0" ]; then exit 1; fi
