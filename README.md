@@ -21,6 +21,11 @@ To use these host lists, you can subscribe or download the file from the link be
 
 - https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/inactive
 
+## Use cases
+
+- [dnslow.me](https://dnslow.me) uses this feed as allowlist to prevent false-positive blocking on URL shorteners.
+- [RethinkDNS](https://rethinkdns.com/) includes this feed as one of the security/privacy block list to block URL shorteners.
+
 ## License
 
 This project is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License(CC-BY-SA-4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
