@@ -1,0 +1,20 @@
+#!/bin/bash
+
+duplicated_domain="$(mktemp)"
+
+for domain in $(cat inactive list | grep -Ev '^(#|$)' | sort | uniq -c | grep -Ev '^\s+1' | awk '{print $NF}'); do
+    echo "$domain" >> "$duplicated_domain"
+done
+
+if [ "$(wc -l < "$duplicated_domain")" -gt "0" ]; then
+    echo "Duplicated domain(s):"
+    for domain in $(cat "$duplicated_domain"); do
+        echo "$domain in: $(grep -E "^${domain}$" inactive list | sort | uniq | awk -F':' '{print $1}' | xargs)"
+    done
+    rm "$duplicated_domain"
+    exit 1
+else
+    echo "No duplicated domain detected"
+fi
+
+rm "$duplicated_domain"
