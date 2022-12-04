@@ -1,0 +1,33 @@
+#!/bin/bash
+
+failed_domain="$(mktemp)"
+
+# warn up
+echo "Preparing ..."
+(grep -v -E '^(#|$)' list | xargs -I '{}' -n 1 -P 5 nslookup -type=A "{}") &> /dev/null
+
+for domain in $(grep -v -E '^(#|$)' list); do
+    if nslookup -type=A $domain > /dev/null; then
+        printf "\033[32m.\033[m"
+    else
+        echo "$domain" >> "$failed_domain"
+        printf "\033[31m.\033[m"
+    fi
+done
+
+echo
+
+if [ "$(wc -l < "$failed_domain")" -gt "0" ]; then 
+    echo "Failed domain(s):"
+    cat "$failed_domain"
+
+    echo
+
+    for domain in $(cat "$failed_domain"); do
+        nslookup $domain
+    done
+    rm "$failed_domain"
+    exit 1
+fi
+
+rm "$failed_domain"
