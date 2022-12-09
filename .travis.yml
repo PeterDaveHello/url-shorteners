@@ -15,7 +15,8 @@ jobs:
       env:
         - task="nslookup check"
       before_script:
-        - echo 'nameserver 9.9.9.10' | sudo tee /etc/resolv.conf
+        - echo 'nameserver 8.8.4.4' | sudo tee /etc/resolv.conf
+        - echo 'nameserver 9.9.9.10' | sudo tee -a /etc/resolv.conf
         - echo 'nameserver 77.88.8.8' | sudo tee -a /etc/resolv.conf
         - echo 'nameserver 168.95.1.1' | sudo tee -a  /etc/resolv.conf
       script:
