@@ -5,7 +5,7 @@
 
 URL shortener domains collection for whitelist/allowlist or blacklist/blocklist purpose.
 
-More than 800 active and 600 inactive URL shorteners already added in the separated lists, and keep getting more accurate data collected.
+More than 900 active and 700 inactive URL shorteners already added in the separated lists, and keep getting more accurate data collected.
 
 You can use this domain list in your network environment to block URL shorteners, or use it as one of the indicators of the domain trustworthy score, at your own risk.
 
