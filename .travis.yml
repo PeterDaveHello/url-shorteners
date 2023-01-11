@@ -10,7 +10,7 @@ stages:
   - test
 
 jobs:
-  allow_failures:
+  include:
     - stage: test
       env:
         - task="nslookup check"
@@ -21,9 +21,11 @@ jobs:
         - echo 'nameserver 168.95.1.1' | sudo tee -a  /etc/resolv.conf
       script:
         - ./tests/nslookup
-  include:
     - stage: test
       env:
         - task="duplicate check"
       script:
         - ./tests/duplicate
+  allow_failures:
+    env:
+      - task="nslookup check"
