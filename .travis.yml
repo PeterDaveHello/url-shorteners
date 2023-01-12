@@ -10,6 +10,7 @@ stages:
   - test
 
 jobs:
+  fast_finish: true
   include:
     - stage: test
       env:
