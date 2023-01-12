@@ -14,7 +14,9 @@ if [ "$(wc -l < "$duplicated_domain")" -gt "0" ]; then
     rm "$duplicated_domain"
     exit 1
 else
-    echo "No duplicated domain detected"
+    ACTIVE_COUNT="$(grep -Ecv '^(#|$)' list)"
+    INACTIVE_COUNT="$(grep -Ecv '^(#|$)' inactive)"
+    echo "No duplicated domain detected, $((ACTIVE_COUNT+INACTIVE_COUNT)) domains in total, $INACTIVE_COUNT inactive, $ACTIVE_COUNT active."
 fi
 
 rm "$duplicated_domain"
