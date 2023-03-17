@@ -3,21 +3,30 @@
 [![Build Status](https://img.shields.io/travis/com/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
 [![GitHub license](https://img.shields.io/github/license/PeterDaveHello/url-shorteners?style=flat-square)](https://github.com/PeterDaveHello/url-shorteners/blob/master/LICENSE)
 
-More than one thousand URL shortener domains collection for whitelist/allowlist or blacklist/blocklist purpose.
+A comprehensive collection of over one thousand URL shortener domains for various purposes such as whitelist/allowlist creation, blacklist/blocklist implementation, or domain trustworthiness assessment. Trusted by NextDNS, RethinkDNS, ControlD, dnslow.me, and various OSINT projects, these high-quality lists are designed to enhance network security, privacy protection, and reduce false positives in domain risk evaluations. Please use these lists at your own risk.
 
-NextDNS, RethinkDNS, ControlD and dnslow.me use this to provide amazing service. You can also use this domain list in your network environment to block/unblock URL shorteners, or use it as one of the indicators of the domain trustworthy score, at your own risk.
+Keep in mind that the data in this repository will not be updated in real-time, as maintaining the lists requires significant effort. Contributions are welcome - feel free to report missing domains, false positives, or submit a donation to support the project.
 
-Data in this repository will not be updated in realtime, the effort to maintain the list is huge, feel free to submit report of missing domains or false positives, donations are also very welcome.
+Domains that are false positives or were previously used as URL shorteners but are now inactive will not be listed in the `list` file but will appear in the `inactive` file.
 
-Those false-postive URL shortener domains, or the domains were used as url-shortener but now abandoned, will not be listed in the `list` file, but will be listed in the `inactive` file.
+## Direct Links
 
-## Direct link
+Subscribe or download the files using the links below:
 
-To use these host lists, you can subscribe or download the file from the link below:
+- Active URL shorteners: <https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list>
+- Inactive URL shorteners: <https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/inactive>
 
-- https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list
+## Usage Scenarios
 
-- https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/inactive
+These domain lists can be applied in various network environments for diverse purposes, including:
+
+- Directly used as a whitelist/allowlist or blacklist/blocklist
+- Minimizing false positives in security and privacy protection measures
+- Evaluating domain trustworthiness as a part of risk assessment processes
+
+## Contribute
+
+Your assistance in maintaining and improving these lists is greatly appreciated. To report missing domains, false positives, or any other issues, kindly submit an issue or pull request on GitHub.
 
 ## License
 
