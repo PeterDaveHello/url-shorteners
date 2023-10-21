@@ -27,6 +27,12 @@ jobs:
         - task="duplicate check"
       script:
         - ./tests/duplicate
+    - stage: test
+      env:
+        - task="sorting check"
+      script:
+        - ./tests/sort
+        -  echo 'example.com' >> list; ! ./tests/sort
   allow_failures:
     env:
       - task="nslookup check"
