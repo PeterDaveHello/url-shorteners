@@ -18,13 +18,13 @@ done
 echo
 
 if [ "$(wc -l < "$failed_domain")" -gt "0" ]; then 
-    echo "Failed domain(s):"
-    cat "$failed_domain"
+    echo "Failed domain(s):" 1>&2
+    cat "$failed_domain" 1>&2
 
-    echo
+    echo 1>&2
 
     for domain in $(cat "$failed_domain"); do
-        nslookup $domain
+        nslookup $domain 1>&2
     done
     rm "$failed_domain"
     exit 1

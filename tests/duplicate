@@ -7,9 +7,9 @@ for domain in $(cat inactive list | grep -Ev '^(#|$)' | sort | uniq -c | grep -E
 done
 
 if [ "$(wc -l < "$duplicated_domain")" -gt "0" ]; then
-    echo "Duplicated domain(s):"
+    echo "Duplicated domain(s):" 1>&2
     for domain in $(cat "$duplicated_domain"); do
-        echo "$domain in: $(grep -E "^${domain}$" inactive list | sort | uniq | awk -F':' '{print $1}' | xargs)"
+        echo "$domain in: $(grep -E "^${domain}$" inactive list | sort | uniq | awk -F':' '{print $1}' | xargs)" 1>&2
     done
     rm "$duplicated_domain"
     exit 1
