@@ -7,7 +7,7 @@ echo "Preparing ..."
 (grep -v -E '^(#|$)' list | xargs -I '{}' -n 1 -P 5 nslookup -type=A "{}") &> /dev/null
 
 for domain in $(grep -v -E '^(#|$)' list); do
-    if nslookup -type=A $domain > /dev/null; then
+    if nslookup -type=A "$domain" > /dev/null; then
         printf "\033[32m.\033[m"
     else
         echo "$domain" >> "$failed_domain"
@@ -24,7 +24,7 @@ if [ "$(wc -l < "$failed_domain")" -gt "0" ]; then
     echo 1>&2
 
     for domain in $(cat "$failed_domain"); do
-        nslookup $domain 1>&2
+        nslookup "$domain" 1>&2
     done
     rm "$failed_domain"
     exit 1
