@@ -1,0 +1,48 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  nslookup-check:
+    runs-on: ubuntu-latest
+    continue-on-error: true  # Equivalent to allow_failures in Travis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
+      
+      - name: Configure DNS servers
+        run: |
+          echo 'nameserver 8.8.4.4' | sudo tee /etc/resolv.conf
+          echo 'nameserver 9.9.9.10' | sudo tee -a /etc/resolv.conf
+          echo 'nameserver 77.88.8.8' | sudo tee -a /etc/resolv.conf
+          echo 'nameserver 168.95.1.1' | sudo tee -a /etc/resolv.conf
+      
+      - name: Run nslookup test
+        run: ./tests/nslookup
+
+  duplicate-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
+      
+      - name: Run duplicate test
+        run: ./tests/duplicate
+
+  sorting-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 5
+      
+      - name: Run sorting tests
+        run: |
+          ./tests/sort
+          echo 'example.com' >> list && ! ./tests/sort
