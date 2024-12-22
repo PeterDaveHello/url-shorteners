@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export LC_ALL=C
 tempfile="$(mktemp)"
@@ -6,7 +6,7 @@ pass=true
 
 for file in list inactive; do
     if ! diff --color=always -u <(grep -v -E '^(#|$)' "$file") <(grep -v -E '^(#|$)' "$file" | sort) > "$tempfile"; then
-        echo -e "\nFile $file not proerly sorted!\n\nDiff between current and the correct version:" 1>&2
+        echo -e "\nThe file $file list, is not proerly sorted!\n\nDiff between current and the correct version:" 1>&2
         echo '```' 1>&2
         awk '!/^\033\[1m\+\+\+ |^\033\[1m--- /' "$tempfile" 1>&2
         echo '```' 1>&2
