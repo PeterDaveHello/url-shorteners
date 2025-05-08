@@ -5,9 +5,9 @@
 [![Build Status](https://img.shields.io/travis/com/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
 [![GitHub license](https://img.shields.io/github/license/PeterDaveHello/url-shorteners?style=flat-square)](https://github.com/PeterDaveHello/url-shorteners/blob/master/LICENSE)
 
-這是一個包含逾千個 URL 短網址服務網域的完整清單，可用於建立白名單/允許清單、黑名單/封鎖清單，或作為網域可信度評估等多種用途。此清單已受到 NextDNS、RethinkDNS、ControlD、dnslow.me 及各個 OSINT 專案採用。這些高品質清單旨在強化網路安全、隱私保護及降低網域風險評估中的誤判。請在使用這些清單時自行斟酌風險。
+這是一個包含逾千個 URL 短網址服務網域的完整清單，可用於建立白名單/允許清單、黑名單/封鎖清單，或作為網域可信度評估等多種用途。此清單已被 NextDNS、RethinkDNS、ControlD、dnslow.me 及各個 OSINT 專案採用。這些高品質清單旨在強化網路安全、隱私保護及降低網域風險評估中的誤判。請在使用這些清單時自行斟酌風險。
 
-請注意，因為維護這些清單需要大量的時間與心力，本儲存庫不會即時更新。歡迎您的貢獻——無論是回報缺失的網域、誤判網域，或是透過捐款支持本專案。
+請注意，因為維護這些清單需耗費大量時間與心力，本儲存庫不會即時更新。歡迎您的貢獻——無論是回報缺失的網域、誤判網域，或是透過捐款支持本專案。
 
 曾被誤判或已停止短網址服務的網域將不列於 `list` 檔案，而會記錄於 `inactive` 檔案中。
 

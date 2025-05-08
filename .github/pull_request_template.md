@@ -6,7 +6,7 @@
 ## Domain Usage Proof
 <!-- Provide at least 2-3 examples showing how these domains are being used as URL shorteners -->
 
-```
+```text
 1. http://short.example/abc -> https://www.actual-domain.com/page1
 2. http://short.example/def -> https://www.actual-domain.com/page2
 3. ...

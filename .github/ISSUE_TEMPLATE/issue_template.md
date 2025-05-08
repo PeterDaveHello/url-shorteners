@@ -10,7 +10,7 @@
 
 ## Verification Examples
 <!-- Provide example short URLs and their destination URLs to demonstrate the issue -->
-```
+```text
 1. http://short.example/abc -> https://www.actual-domain.com/page1
 2. ...
 ```
