@@ -1,5 +1,7 @@
 # URL Shorteners
 
+🌐 English | [繁體中文](./README.zh-TW.md)
+
 [![Build Status](https://img.shields.io/travis/com/PeterDaveHello/url-shorteners/master.svg?style=flat-square)](https://app.travis-ci.com/PeterDaveHello/url-shorteners)
 [![GitHub license](https://img.shields.io/github/license/PeterDaveHello/url-shorteners?style=flat-square)](https://github.com/PeterDaveHello/url-shorteners/blob/master/LICENSE)
 
