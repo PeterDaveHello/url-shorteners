@@ -31,3 +31,21 @@ Your assistance in maintaining and improving these lists is greatly appreciated.
 ## License
 
 This project is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License(CC-BY-SA-4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Managing Domains
+
+A shell script `manage_domains.sh` is provided to help manage the domains in the `list` and `inactive` files. The script ensures that the files remain sorted and comments are not affected.
+
+### Usage
+
+To add a new domain to the list file:
+
+```sh
+./manage_domains.sh add <domain>
+```
+
+To move an inactive domain to the inactive list:
+
+```sh
+./manage_domains.sh move <domain>
+```
